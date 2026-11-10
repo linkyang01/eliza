@@ -52,6 +52,8 @@
         "a lost child insert response retains the committed child without failing the app",
         "app deploy handoff recovery preserves the URL published by its ready child",
         "a live provision child links its container when its original parent is terminal",
+        "exhausted provision acknowledgement preserves the committed app READY result",
+        "an exhausted pre-READY provision failure still marks the current deployment failed",
         "an exhausted deploy lease keeps an unconfirmed app generation in the deletion inventory",
         "an app deletion claim does not hide its interrupted deployment from recovery",
         "a deploy attempt that fails after the runner claims it leaves the app redeployable",
@@ -364,6 +366,26 @@
         "revoke during deferred upgrade import refuses late public socket allocation",
         "revoke joins a claimed opening across deferred imports before confirming no dispatch",
         "failed deferred close import preserves an unconfirmed outcome and blocks a late upgrade"
+      ]
+    }
+  ],
+  "app_deploy_ready_writeback.qnt": [
+    {
+      "file": "packages/cloud/shared/src/lib/services/__tests__/app-deploy-failed-attempt.pglite.test.ts",
+      "required": [
+        "an interrupted deploy without an exact child retains an unresolved job and app generation",
+        "an interrupted deploy acknowledges its exact durable child without repeating the handoff",
+        "a lost child insert response retains the committed child without failing the app",
+        "app deploy handoff recovery preserves the URL published by its ready child",
+        "a live provision child links its container when its original parent is terminal",
+        "exhausted provision acknowledgement preserves the committed app READY result",
+        "an exhausted pre-READY provision failure still marks the current deployment failed",
+        "an exhausted deploy lease keeps an unconfirmed app generation in the deletion inventory",
+        "an app deletion claim does not hide its interrupted deployment from recovery",
+        "a deploy attempt that fails after the runner claims it leaves the app redeployable",
+        "a worker that sees an already failed current generation settles it failed",
+        "an older queued generation cannot change a newer deployment",
+        "concurrent deploy admission and a lost enqueue response leave one job for the winning generation"
       ]
     }
   ]
